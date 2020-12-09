@@ -1,0 +1,61 @@
+
+
+<mat-card id="divWeatherMain" class="example-card">
+    <mat-toolbar>
+        <span>Weather Forecast</span>
+    </mat-toolbar>
+
+    <mat-card-header class="weatherwidgetRow">
+        <div class="weatherwidgetRow" style="font-size: 2rem; margin-bottom: 15px;">
+            {{ CurrentTime }}
+        </div>
+
+        <div mat-card-avatar class="example-header-image"></div>
+        <div *ngIf="isDay" class="weatherwidgetRow">
+            <i class="fas fa-3x fa-sun sun"></i>
+        </div>
+        <div *ngIf="!isDay" class="weatherwidgetRow">
+            <i class="fas fa-3x fa-moon moon"></i>
+        </div>
+        <div class="weatherwidgetRow cloudDiv">
+            <i class="fas fa-3x fa-cloud cloud"></i>
+        </div>
+    </mat-card-header>
+
+    <mat-card-content>
+       
+        <div class="weatherwidgetRow" style="font-size: 2rem; margin-top: 15px;">
+            {{ temp_celcius || 'loading...'}}°
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1rem; margin-top: 10px;">
+            Feels Like: {{temp_feels_like || 'loading...'}}°
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1rem;">
+            Humidity: {{humidity || 'loading...'}}%
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1.5rem; margin-top: 15px;">
+            {{(currentDate | date)  || 'loading...'}}
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1.5rem; margin-top: 10px;">
+            {{(cityName | uppercase)|| 'loading...' }}
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1.2rem; margin-top: 5px;">
+            {{country || 'loading...'}}
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1rem; margin-top: 5px;">
+            Sunrise: {{sunrise_time || 'loading...'}}
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1rem; margin-top: 5px;">
+            Sunset: {{sunset_time || 'loading...'}}
+        </div>
+        <div class="weatherwidgetRow" style="font-size: 1rem; margin-top: 5px;">
+            Weather Description: {{(weatherDesc | titlecase) || 'loading...'}}
+        </div>
+    </mat-card-content>
+
+    <mat-card-actions>
+        
+      </mat-card-actions>
+</mat-card>
+
+

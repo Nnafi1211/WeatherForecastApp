@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+#divWeatherMain{
+    display: block;
+    margin: 0 auto;
+    height: 100vh;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 10%, rgba(8,7,42,1) 80%, rgb(7,5,45,1) 10%);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+mat-toolbar {
+    color: white;
+    background: linear-gradient(180deg, rgba(100, 100, 255, .5) 5%, rgba(8,7,42,1) 80%, rgb(7,5,45,1) 10%);
+}
+
+.weatherwidgetRow{
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.sun{
+    font-size: 4rem;
+    margin-top: 10px;
+    color: yellow;
+    filter: drop-shadow(3px 3px 3px yellow);
+}
+
+.moon{
+    margin-top: 10px;
+    font-size: 4rem;
+    color: white;
+    filter: drop-shadow(3px 3px 3px white);
+}
+
+.cloudDiv{
+    margin-top: -50px;
+}
+
+.cloud{
+    font-size: 3.5rem;
+    color: rgb(104, 175, 197);
+    filter: drop-shadow(1px 1px 5px rgb(104, 175, 197));
+    animation-name: cloudMovement;
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+    animation-timing-function: ease-out;
+    animation-direction: alternate;
+}
+
+@keyframes cloudMovement{
+    from{
+        margin-left: -55px;
+    }
+    to{
+        margin-left: 65px;
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
